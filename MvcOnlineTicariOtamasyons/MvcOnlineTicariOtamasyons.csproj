@@ -239,6 +239,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Kategori\Index.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Kategori\KategoriEkle.cshtml" />
+    <Content Include="Views\Kategori\KategoriGetir.cshtml" />
+    <Content Include="Views\Urun\Index.cshtml" />
+    <Content Include="Views\Urun\YeniUrun.cshtml" />
+    <Content Include="Views\Urun\UrunGetir.cshtml" />
+    <Content Include="Views\Departman\Index.cshtml" />
+    <Content Include="Views\Departman\DepartmanEkle.cshtml" />
+    <Content Include="Views\Departman\DepartmanGetir.cshtml" />
     <Content Include="Web\.browserslistrc" />
     <Content Include="Web\.gitignore" />
     <Content Include="Web\.travis.yml" />
@@ -284,14 +292,6 @@
     <Content Include="Web\src\scss\variables\_spacing.scss" />
     <Content Include="Web\src\scss\_global.scss" />
     <Content Include="Web\src\scss\_variables.scss" />
-    <Content Include="Views\Kategori\KategoriEkle.cshtml" />
-    <Content Include="Views\Kategori\KategoriGetir.cshtml" />
-    <Content Include="Views\Urun\Index.cshtml" />
-    <Content Include="Views\Urun\YeniUrun.cshtml" />
-    <Content Include="Views\Urun\UrunGetir.cshtml" />
-    <Content Include="Views\Departman\Index.cshtml" />
-    <Content Include="Views\Departman\DepartmanEkle.cshtml" />
-    <Content Include="Views\Departman\DepartmanGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
