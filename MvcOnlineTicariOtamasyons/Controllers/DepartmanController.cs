@@ -54,5 +54,7 @@ namespace MvcOnlineTicariOtamasyons.Controllers
             return RedirectToAction("Index");
 
         }
+
+
     }
 }
