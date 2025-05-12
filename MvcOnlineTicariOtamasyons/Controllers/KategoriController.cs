@@ -27,6 +27,7 @@ namespace MvcOnlineTicariOtamasyons.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public ActionResult KategoriSil(int id)
         {
             var kate = c.Kategoris.Find(id);
@@ -46,5 +47,6 @@ namespace MvcOnlineTicariOtamasyons.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
     }
 }
