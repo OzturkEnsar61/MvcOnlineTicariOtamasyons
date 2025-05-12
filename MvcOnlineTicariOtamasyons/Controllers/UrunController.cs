@@ -45,6 +45,7 @@ namespace MvcOnlineTicariOtamasyons.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public ActionResult UrunGetir(int id)
         {
             List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
