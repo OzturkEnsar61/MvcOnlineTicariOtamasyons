@@ -1,33 +1,46 @@
 ﻿@using MvcOnlineTicariOtamasyons.Models.Sınıflar;
 @model List<Personel>
+
 @{
     ViewBag.Title = "DepartmanDetay";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
 }
-<br />
-<h2>Departman Detay Sayfası</h2>
-<br />
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Departman Adı : @ViewBag.d</li>
-</ol>
+<h2 class="mt-4 mb-3">Departman Detay</h2>
 
-<table class="table table-hover">
-    <tr>
-        <th>Personel ID</th>
-        <th>Ad</th>
-        <th>SoyAd</th>
-        <th>Görsel</th>
-        <th>Satışlar</th>
-    </tr>
-    @foreach (var x in Model)
-    {
-    <tr>
-        <td>@x.PersonelID</td>
-        <td>@x.PersonelAd</td>
-        <td>@x.PersonelSoyad</td>
-        <td>@x.PersonelGörsel</td>
-        <td><a href="#" class="btn btn-default" style="background-color:crimson">Satışlar</a></td>
-    </tr>
-    }
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Departman Adı: @ViewBag.d</li>
+    </ol>
+</nav>
 
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Personel ID</th>
+                <th scope="col">Ad</th>
+                <th scope="col">Soyad</th>
+                <th scope="col">Görsel</th>
+                <th scope="col">Satışlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.PersonelID</td>
+                    <td>@x.PersonelAd</td>
+                    <td>@x.PersonelSoyad</td>
+                    <td>
+                        <img src="@x.PersonelGörsel" alt="görsel" class="img-thumbnail" style="max-width: 75px;" />
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-danger">
+                            <i class="fas fa-chart-line me-1"></i> Satışlar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
