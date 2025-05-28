@@ -1,21 +1,28 @@
 ﻿@model MvcOnlineTicariOtamasyons.Models.Sınıflar.Departman
+
 @{
-    ViewBag.Title = "DepartmanGetir";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewBag.Title = "Departman Güncelle";
+    Layout = "~/Views/Shared/MainLayout.cshtml"; 
 }
 
-<br />
-<h2>Departman Güncelleme</h2>
-<br />
-@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.LabelFor(x => x.DeparmanAd)
-        <br />
-        @Html.TextBoxFor(x => x.DeparmanAd, new { @class = "form-controller" }) 
-        @Html.HiddenFor(x => x.DeparmanID)
+<div class="container mt-4">
+    <h2 class="mb-4">Departman Güncelleme</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            @using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.DeparmanID) 
+
+                <div class="mb-3">
+                    @Html.LabelFor(x => x.DeparmanAd, new { @class = "form-label" }) 
+                    @Html.TextBoxFor(x => x.DeparmanAd, new { @class = "form-control", placeholder = "Yeni departman adını girin" }) 
+                </div>
+
+                <button type="submit" class="btn btn-warning">
+                    <i class="fas fa-sync-alt me-1"></i> Güncelle
+                </button>
+            }
+        </div>
     </div>
-
-    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
-}
-
+</div>
