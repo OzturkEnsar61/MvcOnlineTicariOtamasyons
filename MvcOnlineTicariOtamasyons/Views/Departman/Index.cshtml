@@ -1,35 +1,54 @@
-﻿@using MvcOnlineTicariOtamasyons.Models.Sınıflar;
+﻿@using MvcOnlineTicariOtamasyons.Models.Sınıflar
 @model List<Departman>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewBag.Title = "Departmanlar";
+    Layout = "~/Views/Shared/MainLayout.cshtml"; 
 }
 
+<div class="container mt-4">
+    <h2 class="mb-4">Departman Listesi</h2>
 
+    <table class="table table-bordered table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Departman Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var k in Model)
+            {
+                <tr>
+                    <td>@k.DeparmanID</td> 
+                    <td>@k.DeparmanAd</td> 
 
-<table class="table table-bordered" style="margin-top: 20px">
-    <tr>
-        <th>ID</th>
-        <th>Departman Adı</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Detaylar</th>
-    </tr>
+                    <td>
+                        <a href="/Departman/DepartmanSil/@k.DeparmanID" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Sil
+                        </a>
+                    </td>
 
-    @foreach (var k in Model)
-    {
-        <tr>
-            <td>
-                @k.DeparmanID
-            </td>
-            <td>
-                @k.DeparmanAd
-            </td>
-            <td><a href="/Departman/DepartmanSil/@k.DeparmanID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Departman/DepartmanGetir/@k.DeparmanID" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="/Departman/DepartmanDetay/@k.DeparmanID" class="btn btn-success" style="background-color:dimgray">Detaylar</a></td>
+                    <td>
+                        <a href="/Departman/DepartmanGetir/@k.DeparmanID" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> Güncelle
+                        </a>
+                    </td>
 
-        </tr>
-    }
-</table>
-<a href="/Departman/DepartmanEkle" class="btn btn-info"> Departman Ekle </a>
+                    <td>
+                        <a href="/Departman/DepartmanDetay/@k.DeparmanID" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-eye"></i> Detaylar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Departman/DepartmanEkle" class="btn btn-success mt-2">
+        <i class="fas fa-plus-circle"></i> Yeni Departman Ekle
+    </a>
+</div>
