@@ -1,0 +1,74 @@
+﻿@RenderBody()
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffffcc;
+        font-family: 'Orbitron', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .baslik {
+        font-family: 'Pacifico', cursive;
+        font-size: 5rem;
+        letter-spacing: 3px;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 40px;
+        animation: fadeInDown 1.2s ease-out;
+    }
+
+    .btn-devam {
+        font-size: 1.3rem;
+        padding: 12px 36px;
+        border: 2px solid #00c6ff;
+        background: transparent;
+        color: #00c6ff;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        animation: fadeInUp 1.5s ease-out;
+    }
+
+        .btn-devam:hover {
+            background-color: #00c6ff;
+            color: white;
+            box-shadow: 0 0 15px #00c6ff88;
+        }
+
+    @@keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

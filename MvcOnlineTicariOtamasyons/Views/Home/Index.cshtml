@@ -1,32 +1,103 @@
 ﻿@{
     ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/EntryLayout.cshtml";
 }
 
-<main class="bg-dark text-white p-5">
-    <section class="row mb-4" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET, HTML, CSS ve JavaScript kullanarak harika web siteleri ve uygulamaları geliştirmenizi sağlayan ücretsiz bir web frameworküdür.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Daha Fazla Bilgi &raquo;</a></p>
-    </section>
+<main class="entry-container">
+    <div class="baslik">Ticari Otomasyon</div>
 
-    <div class="row">
-        <section class="col-md-4 mb-3" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Başlarken</h2>
-            <p>
-                ASP.NET MVC, dinamik web siteleri geliştirmenizi sağlayan güçlü ve kalıplara dayalı bir yapıdır.
-                Temiz bir katman ayrımı sağlar ve geliştirmenin her aşamasında kontrol sunar.
-            </p>
-            <p><a class="btn btn-outline-light" href="https://go.microsoft.com/fwlink/?LinkId=301865">Daha Fazla Bilgi &raquo;</a></p>
-        </section>
-        <section class="col-md-4 mb-3" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Daha Fazla Kütüphane Edin</h2>
-            <p>NuGet, Visual Studio projelerine kolayca kütüphane eklemenizi, kaldırmanızı ve güncellemenizi sağlayan ücretsiz bir uzantıdır.</p>
-            <p><a class="btn btn-outline-light" href="https://go.microsoft.com/fwlink/?LinkId=301866">Daha Fazla Bilgi &raquo;</a></p>
-        </section>
-        <section class="col-md-4 mb-3" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>Uygulamalarınız için uygun fiyat ve özellikler sunan bir web hosting sağlayıcısı bulmanız oldukça kolay.</p>
-            <p><a class="btn btn-outline-light" href="https://go.microsoft.com/fwlink/?LinkId=301867">Daha Fazla Bilgi &raquo;</a></p>
-        </section>
-    </div>
+    <p class="slogan">Geleceğin iş yönetimi şimdi başlıyor.</p>
+
+    <form action="/Departman/Index" method="get">
+        <button type="submit" class="btn-devam">Devam Et</button>
+    </form>
 </main>
+
+<style>
+    .entry-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(135deg, #000000, #2c2c2c);
+        color: #dddddd;
+        overflow: hidden;
+    }
+
+    .baslik {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 4.5rem;
+        letter-spacing: 2px;
+        background: linear-gradient(to right, #555, #bbb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+        animation: fadeInDown 1.2s ease-out;
+    }
+
+    .slogan {
+        font-size: 1.4rem;
+        color: #888;
+        margin-top: -10px;
+        margin-bottom: 40px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .btn-devam {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+        border: 2px solid #999;
+        background: transparent;
+        color: #bbb;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        animation: fadeInUp 1.5s ease-out;
+        cursor: pointer;
+    }
+
+        .btn-devam:hover {
+            background-color: #bbb;
+            color: #111;
+            box-shadow: 0 0 10px #999;
+        }
+
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
